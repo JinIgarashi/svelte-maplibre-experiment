@@ -16,7 +16,7 @@ const config = {
 		}),
 		paths: {
 			// YOUR github repository name
-			base: process.env.NODE_ENV === 'production' ? '/svelte-maplibre-experiment' : ''
+			base: process.env.NODE_ENV === 'production' ? '/maplibre-shapeburst-experiment' : ''
 		}
 	}
 };
