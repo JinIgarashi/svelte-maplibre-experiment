@@ -14,8 +14,6 @@
 	import * as pmtiles from 'pmtiles';
 
 	import { map } from '$lib/stores';
-	let protocol = new pmtiles.Protocol();
-	maplibregl.addProtocol('pmtiles', protocol.tile);
 
 	interface country {
 		adm0_id: string;
@@ -49,6 +47,9 @@
 		_map.addControl(new AttributionControl({ compact: true }), 'bottom-right');
 
 		_map.on('load', () => {
+			let protocol = new pmtiles.Protocol();
+			maplibregl.addProtocol('pmtiles', protocol.tile);
+
 			_map.addSource('admin', {
 				type: 'vector',
 				url: `pmtiles://${$page.url.origin}/admin_0.pmtiles`,
