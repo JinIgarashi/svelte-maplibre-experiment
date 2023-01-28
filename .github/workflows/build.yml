@@ -59,9 +59,11 @@ jobs:
       # - name: test
       #   run: pnpm test
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.7
-        if: ${{ github.ref == 'refs/heads/main' }}
-        with:
+        if: ${{ github.repository == 'jinigarashi/svelte-maplibre-experiment' && github.ref == 'refs/heads/main'}}
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages # The branch the action should deploy to.
-          folder: build # The folder the action should deploy.
+        run: |
+          git config --global user.name "jinigarashi+githubci"
+          git config --global user.email "jinigarashi+githubci@users.noreply.github.com"
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/jinigarashi/svelte-maplibre-experiment.git
+          pnpm deploy:ghpages
