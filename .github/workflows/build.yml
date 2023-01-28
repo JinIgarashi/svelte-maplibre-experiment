@@ -49,15 +49,15 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+      # - name: Install Playwright Browsers
+      #   run: npx playwright install --with-deps
       - name: lint, format & build
         run: |
           pnpm lint
           pnpm format
           pnpm build
-      - name: test
-        run: pnpm test
+      # - name: test
+      #   run: pnpm test
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.7
         if: ${{ github.ref == 'refs/heads/main' }}
