@@ -13,11 +13,11 @@ const config = {
 			pages: 'build',
 			assets: 'build',
 			fallback: null
-		}),
-		paths: {
-			// YOUR github repository name
-			base: process.env.NODE_ENV === 'production' ? '/maplibre-shapeburst-experiment' : ''
-		}
+		})
+		// paths: {
+		// 	// YOUR github repository name
+		// 	base: process.env.NODE_ENV === 'production' ? '/maplibre-shapeburst-experiment' : ''
+		// }
 	}
 };
 
