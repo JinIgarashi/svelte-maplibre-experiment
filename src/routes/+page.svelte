@@ -11,3 +11,7 @@
 <div>
 	<Map />
 </div>
+
+<style global lang="scss">
+	@import 'bulma/css/bulma.css';
+</style>

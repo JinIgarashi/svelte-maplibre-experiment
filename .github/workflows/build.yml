@@ -52,10 +52,7 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: lint, format & build
-        env:
-          PUBLIC_MAPTILER_KEY: ${{secrets.MAPTILER_KEY}}
         run: |
-          echo "PUBLIC_MAPTILER_KEY=${PUBLIC_MAPTILER_KEY}" > .env
           pnpm lint
           pnpm format
           pnpm build
